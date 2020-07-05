@@ -32,7 +32,7 @@ module ExceptionNotifier
       send_notice(*args) do |_msg, message_opts|
         message_opts[:channel] = options[:channel] if options.key?(:channel)
 
-        @notifier.ping '', message_opts
+        @notifier.ping _msg, message_opts
       end
     end
 
